@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[884],{2277:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/ci-cd","name":"ci/cd","count":1,"permalink":"/blog/tags/ci-cd"}')}}]);
