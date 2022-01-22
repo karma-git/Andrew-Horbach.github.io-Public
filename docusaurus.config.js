@@ -9,7 +9,7 @@ const config = {
   title: 'karma_ 🦖',
   tagline: 'docusaurus is Awesome',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/docosaurus-playground',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
