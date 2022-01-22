@@ -15,3 +15,9 @@ slorber:
   title: Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
+
+a.horbach:
+  name: Andrew Horbach
+  title: DevOps Engineer
+  image_url: https://github.com/karma-git.png
+  url: https://github.com/karma-git

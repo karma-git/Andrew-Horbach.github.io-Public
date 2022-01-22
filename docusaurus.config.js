@@ -6,15 +6,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'karma_ 🦖',
+  tagline: 'docusaurus is Awesome',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'karma-git', // Usually your GitHub org/user name.
+  projectName: 'docosaurus-playground ', // Usually your repo name.
+
+  // ref: https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor
+  themes: ['@docusaurus/theme-live-codeblock'],
 
   presets: [
     [
@@ -43,21 +46,21 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'karma_',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'My Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'demo',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Demo',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/karma-git/docosaurus-playground',
             label: 'GitHub',
             position: 'right',
           },
@@ -70,7 +73,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Demo',
                 to: '/docs/intro',
               },
             ],
@@ -79,17 +82,14 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Telegram',
+                href: 'https://t.me/devopsi',
               },
+              // This is StandAlone Page
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+                label: 'Page',
+                href: '/my-markdown-page'
+              }
             ],
           },
           {
@@ -101,12 +101,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/karma-git/docosaurus-playground.git',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} karma, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
