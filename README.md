@@ -21,3 +21,5 @@ $ yarn start  # start development server
 ## Sandbox
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/github-1pvxjv)
+
+To run dev server `yarn install && yarn start`
