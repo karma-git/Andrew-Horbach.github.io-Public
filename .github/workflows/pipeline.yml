@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: redkubes/docusaurus-deploy-action@master
         with:
-          source-folder: website
+          source-folder: ./
           git-user: karma-git
-          git-password: ${{ secrets.GITHUB_TOKEN }}
+          git-password: ${{ secrets.DOC_GH_TOKEN }}
           deployment-branch: gh-pages
