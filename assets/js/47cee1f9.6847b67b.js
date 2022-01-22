@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[804],{6474:function(s){s.exports=JSON.parse('{"allTagsPath":"/docosaurus-playground/blog/tags","slug":"/docosaurus-playground/blog/tags/k-8-s","name":"k8s","count":1,"permalink":"/docosaurus-playground/blog/tags/k-8-s"}')}}]);

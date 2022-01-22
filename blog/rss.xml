@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>karma_ 🦖 Blog</title>
-        <link>https://your-docusaurus-test-site.com/blog</link>
+        <link>https://your-docusaurus-test-site.com/docosaurus-playground/blog</link>
         <description>karma_ 🦖 Blog</description>
         <lastBuildDate>Thu, 20 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome to Karma's Docs!]]></title>
-            <link>https://your-docusaurus-test-site.com/blog/welcome-docusaurus-v2</link>
+            <link>https://your-docusaurus-test-site.com/docosaurus-playground/blog/welcome-docusaurus-v2</link>
             <guid>welcome-docusaurus-v2</guid>
             <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[This is my first post on Docusaurus 2.]]></description>

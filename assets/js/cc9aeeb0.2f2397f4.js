@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[297],{5376:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/doc-ops","name":"DocOps","count":1,"permalink":"/blog/tags/doc-ops"}')}}]);

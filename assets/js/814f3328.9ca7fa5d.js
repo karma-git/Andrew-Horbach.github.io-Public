@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[535],{5641:function(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to Karma\'s Docs!","permalink":"/blog/welcome-docusaurus-v2"}]}')}}]);

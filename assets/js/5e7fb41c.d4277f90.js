@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[160],{2534:function(s){s.exports=JSON.parse('{"allTagsPath":"/docosaurus-playground/blog/tags","slug":"/docosaurus-playground/blog/tags/doc-ops","name":"DocOps","count":1,"permalink":"/docosaurus-playground/blog/tags/doc-ops"}')}}]);
