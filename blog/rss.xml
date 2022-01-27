@@ -1,19 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>karma_ 🦖 Blog</title>
-        <link>https://your-docusaurus-test-site.com/docosaurus-playground/blog</link>
-        <description>karma_ 🦖 Blog</description>
-        <lastBuildDate>Thu, 20 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <title>Andrew Horbach Blog</title>
+        <link>https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/blog</link>
+        <description>Andrew Horbach Blog</description>
+        <lastBuildDate>Fri, 28 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Welcome to Karma's Docs!]]></title>
-            <link>https://your-docusaurus-test-site.com/docosaurus-playground/blog/welcome-docusaurus-v2</link>
-            <guid>welcome-docusaurus-v2</guid>
-            <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[This is my first post on Docusaurus 2.]]></description>
-            <content:encoded><![CDATA[<p>Welcome to this blog. This blog is created with <a href="https://docusaurus.io/"><strong>Docusaurus 2</strong></a>.</p><p>This is my first post on Docusaurus 2.</p><p>A whole bunch of exploration to follow.</p>]]></content:encoded>
+            <title><![CDATA[Selfmade Vagrant box]]></title>
+            <link>https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/blog/selfmade-vagrant-box</link>
+            <guid>selfmade-vagrant-box</guid>
+            <pubDate>Fri, 28 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[VagrantBox собирается настолько же просто как и DockerImage!]]></description>
+            <content:encoded><![CDATA[<p>На VagrantCloud не нашел нормальных box-ов с GUI.</p><h2>Процесс</h2><p>:::info
+Буду делать аналогии с <em>docker</em>
+:::</p><h3>config file</h3><p>Описываем конфигурацию нашего VagrantBox (<em>DockerImage</em>) в формате <code>.hcl</code> (<em>terraform</em>)</p><pre><code class="language-hcl">source &quot;vagrant&quot; &quot;ubuntu&quot; {
+  add_force    = true
+  communicator = &quot;ssh&quot;
+  provider     = &quot;virtualbox&quot;
+  source_path  = &quot;ubuntu/focal64&quot;
+}
+
+build {
+  name    = &quot;learn-packer&quot;
+  sources = [
+    &quot;source.vagrant.ubuntu&quot;
+  ]
+}
+</code></pre><p>:::tip
+Полезные команды:</p><pre><code class="language-shell">packer validate packer.hcl  # валидирует файл
+packer fmt .                # форматирует файлы, и кажется, выполняет валидацию
+</code></pre><p>:::</p><h3>build</h3><p>С помощью <a href="https://www.packer.io/"><code>packer</code></a> (<em>docker engine</em>) собираем образ.</p><pre><code class="language-shell">packer build packer.hcl
+</code></pre><p>Через некоторое время в директории <code>learn-packer</code> появится файл <code>.box</code> (<em>docker_image</em>)</p><h3>push</h3><p>Заливаем получившийся файл на <a href="https://app.vagrantup.com/boxes/search">VagrantCloud</a>. Понадобиться собрать хэш-сумму файла, например через <code>md5</code></p><h3>provisioner</h3><p>:::note
+Любимый провиженер - ansible, но можно использовать <code>shell</code>
+:::</p><div><div value="hcl" label="packer.hcl"><pre><code class="language-hcl">source &quot;vagrant&quot; &quot;ubuntu&quot; {
+  add_force    = true
+  communicator = &quot;ssh&quot;
+  provider     = &quot;virtualbox&quot;
+  source_path  = &quot;ubuntu/focal64&quot;
+}
+
+build {
+  name    = &quot;learn-packer&quot;
+  sources = [
+    &quot;source.vagrant.ubuntu&quot;
+  ]
+  provisioner &quot;ansible&quot; {
+    playbook_file = &quot;./ansible/packer-playbook.yml&quot;
+  }
+}
+</code></pre></div><div value="yml" label="packer-playbook.yml"><pre><code class="language-yml">---
+
+- name: install docker engine ubuntu
+  hosts: all
+
+  become: true
+  become_method: sudo
+
+  tasks:
+    - name: 1. Update the apt package index and install packages to allow apt to use a repository over HTTPS
+      apt:
+        name: 
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - python3-pip
+          - awscli
+        state: latest
+        update_cache: true
+
+    - name: 2. Add Docker’s official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: 3. Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable  # FIXME move to var
+        state: present
+
+    - name: 4. Install docker engine
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    # Docker post-install steps for ubuntu
+
+    - name: 1. Make sure that group &quot;docker&quot; exists
+      group:
+        name: docker
+        state: present
+
+    - name: 2. Add aws user to docker docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: true
+</code></pre></div></div><h3>post-processors</h3><p>:::caution
+Не протестировал
+:::</p><p>Штуки которые выполняются после сборки, например публикация в <em>VagrantCloud</em> (<em>docker push</em>)</p><p><a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/ubuntu-gui">GitHub repo</a></p>]]></content:encoded>
         </item>
     </channel>
 </rss>

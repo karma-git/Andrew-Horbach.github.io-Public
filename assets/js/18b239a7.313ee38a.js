@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[429],{7922:function(s){s.exports=JSON.parse('{"allTagsPath":"/docosaurus-playground/blog/tags","slug":"/docosaurus-playground/blog/tags/ci-cd","name":"ci/cd","count":1,"permalink":"/docosaurus-playground/blog/tags/ci-cd"}')}}]);
