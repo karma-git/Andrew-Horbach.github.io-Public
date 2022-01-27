@@ -9,12 +9,12 @@ const config = {
   title: 'Andrew Horbach',
   tagline: 'My personal page',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/docosaurus-playground/',
+  baseUrl: '/Andrwe-Horbach.github.io-Public/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'karma-git', // Usually your GitHub org/user name.
-  projectName: 'docosaurus-playground ', // Usually your repo name.
+  projectName: 'Andrwe-Horbach.github.io-Public ', // Usually your repo name.
 
   // ref: https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -56,11 +56,11 @@ const config = {
             type: 'doc',
             docId: 'demo',
             position: 'left',
-            label: 'Demo',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/karma-git/docosaurus-playground',
+            href: 'https://github.com/karma-git/Andrwe-Horbach.github.io-Public',
             label: 'GitHub',
             position: 'right',
           },
@@ -73,7 +73,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Demo',
+                label: 'DevOps',
                 to: '/docs/demo',
               },
             ],
@@ -100,7 +100,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/karma-git/docosaurus-playground.git',
+                href: 'https://github.com/karma-git/Andrwe-Horbach.github.io-Public.git',
               },
               {
                 label: 'My Channel',
@@ -114,6 +114,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ruby', 'hcl', 'yaml'],
       },
     }),
 };
