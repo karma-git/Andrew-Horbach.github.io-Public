@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'karma_ 🦖',
-  tagline: 'docusaurus is Awesome',
+  title: 'Andrew Horbach',
+  tagline: 'My personal page',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/docosaurus-playground/',
+  baseUrl: '/Andrwe-Horbach.github.io-Public/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'karma-git', // Usually your GitHub org/user name.
-  projectName: 'docosaurus-playground ', // Usually your repo name.
+  projectName: 'Andrwe-Horbach.github.io-Public ', // Usually your repo name.
 
   // ref: https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -46,7 +46,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'karma_',
+        title: 'home 🏠',
         logo: {
           alt: 'My Logo',
           src: 'img/logo.svg',
@@ -56,11 +56,11 @@ const config = {
             type: 'doc',
             docId: 'demo',
             position: 'left',
-            label: 'Demo',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/karma-git/docosaurus-playground',
+            href: 'https://github.com/karma-git/Andrwe-Horbach.github.io-Public',
             label: 'GitHub',
             position: 'right',
           },
@@ -73,7 +73,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Demo',
+                label: 'DevOps',
                 to: '/docs/demo',
               },
             ],
@@ -83,13 +83,12 @@ const config = {
             items: [
               {
                 label: 'Telegram',
-                href: 'https://t.me/devopsi',
+                href: 'https://t.me/a_horbach',
               },
-              // This is StandAlone Page
               {
-                label: 'Page',
-                href: '/my-markdown-page'
-              }
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/a-horbach/',
+              },
             ],
           },
           {
@@ -101,16 +100,21 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/karma-git/docosaurus-playground.git',
+                href: 'https://github.com/karma-git/Andrwe-Horbach.github.io-Public.git',
+              },
+              {
+                label: 'My Channel',
+                href: 'https://t.me/devopsi',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} karma, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Andrew Horbach. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ruby', 'hcl', 'yaml'],
       },
     }),
 };
