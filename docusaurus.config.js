@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'karma_ 🦖',
-  tagline: 'docusaurus is Awesome',
+  title: 'Andrew Horbach',
+  tagline: 'My personal page',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/docosaurus-playground/',
   onBrokenLinks: 'throw',
@@ -46,7 +46,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'karma_',
+        title: 'home 🏠',
         logo: {
           alt: 'My Logo',
           src: 'img/logo.svg',
@@ -83,13 +83,12 @@ const config = {
             items: [
               {
                 label: 'Telegram',
-                href: 'https://t.me/devopsi',
+                href: 'https://t.me/a_horbach',
               },
-              // This is StandAlone Page
               {
-                label: 'Page',
-                href: '/my-markdown-page'
-              }
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/a-horbach/',
+              },
             ],
           },
           {
@@ -103,10 +102,14 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/karma-git/docosaurus-playground.git',
               },
+              {
+                label: 'My Channel',
+                href: 'https://t.me/devopsi',
+              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} karma, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Andrew Horbach. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
