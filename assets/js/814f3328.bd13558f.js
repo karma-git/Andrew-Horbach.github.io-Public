@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Selfmade Vagrant box","permalink":"/Andrwe-Horbach.github.io-Public/blog/selfmade-vagrant-box"}]}')}}]);

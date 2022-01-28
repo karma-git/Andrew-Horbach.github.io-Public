@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/blog</id>
+    <id>https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog</id>
     <title>Andrew Horbach Blog</title>
     <updated>2022-01-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/blog"/>
+    <link rel="alternate" href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog"/>
     <subtitle>Andrew Horbach Blog</subtitle>
-    <icon>https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/img/favicon.ico</icon>
+    <icon>https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Selfmade Vagrant box]]></title>
         <id>selfmade-vagrant-box</id>
-        <link href="https://your-docusaurus-test-site.com/Andrwe-Horbach.github.io-Public/blog/selfmade-vagrant-box"/>
+        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/selfmade-vagrant-box"/>
         <updated>2022-01-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[VagrantBox собирается настолько же просто как и DockerImage!]]></summary>
         <content type="html"><![CDATA[<p>На VagrantCloud не нашел нормальных box-ов с GUI.</p><h2>Процесс</h2><p>:::info

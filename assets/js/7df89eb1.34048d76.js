@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[766],{3525:function(a){a.exports=JSON.parse('{"allTagsPath":"/Andrwe-Horbach.github.io-Public/blog/tags","slug":"/Andrwe-Horbach.github.io-Public/blog/tags/vagrant","name":"vagrant","count":1,"permalink":"/Andrwe-Horbach.github.io-Public/blog/tags/vagrant"}')}}]);
