@@ -5,7 +5,7 @@ slug: selfmade-vagrant-box
 authors: [a.horbach]
 tags: [vagrant, packer, ansible]
 image: https://i.imgur.com/mErPwqL.png
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Inspiration
