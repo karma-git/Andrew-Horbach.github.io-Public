@@ -109,6 +109,43 @@ build {
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Vagrant - DevOps Environment]]></title>
+        <id>vagrant-karma-linux</id>
+        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/vagrant-karma-linux"/>
+        <updated>2021-02-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Собрал Linux для людей]]></summary>
+        <content type="html"><![CDATA[<h1>Inspiration</h1><p>Буквально недавно <a href="blog/selfmade-vagrant-box">писал</a> про сборку <code>Vagrant</code>-а, <strong>доделалъ</strong> :tada:, в двух версиях:</p><ul><li>в серверной работаем через ssh </li><li>и gui, установлены разные desktop приложения :computer:</li></ul><p><a href="https://asciinema.org/a/58jLHlUsCZA63uGjIClQcX5r0"><img src="https://asciinema.org/a/58jLHlUsCZA63uGjIClQcX5r0.svg" alt="asciicast"/></a></p><p>:::info &quot;Этапы&quot;</p><ul><li><a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/build">Сборка Packer-ом</a></li><li><a href="https://github.com/karma-git/playground/tree/master/ansible">Ansible</a></li><li><a href="https://app.vagrantup.com/karma-kit">Vagrant Cloud</a></li><li><a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/examples">Vagrantfile examples</a></li></ul><p>:::</p><p>Или схематично:</p><div chart="
+  sequenceDiagram
+    participant Packer
+    participant Vagrant
+    participant Ansible
+    Packer-&gt;&gt;Vagrant: Launch tmp VM
+    Note right of Vagrant: !NOTE: at low level Vagrant uses Virtualbox API
+    Vagrant-&gt;&gt;Ansible: Configure tmp VM
+    Ansible--&gt;&gt;Vagrant: Done!
+    Vagrant--&gt;&gt;Packer: Done!
+    %% loop Artifact
+    %%     Ansible-&gt;&gt;Packer: Create Vagrant box from current VM state.
+    %% end
+    note over Packer: Creates Vagrant box from current VM state.
+    note over Packer: Releases the Vagrant box on Vagrant Cloud.
+"></div><h1>Установка на Windows</h1><p>Проверьте ресурсы вашей host OS:</p><p>CPU</p><pre><code class="language-powershell">WMIC CPU Get DeviceID,NumberOfCores,NumberOfLogicalProcessors
+</code></pre><p>Версию OS и общий объем RAM:</p><pre><code class="language-powershell">systeminfo |findstr /c:&quot;OS Name&quot; /c:&quot;Total Physical Memory&quot;
+</code></pre><p><img src="static/vagrant-windows.png" alt="img"/></p><p>:::tip &quot;Рекомедованные ресурсы&quot;</p><ul><li>2 vpcu</li><li>4Gi RAM
+:::</li></ul><p>Вам потребуется:</p><ul><li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li><li><a href="https://www.vagrantup.com/docs/installation">Vagrant</a></li></ul><h1>VirtualBox Guest Additions</h1><blockquote><p><a href="https://docs.oracle.com/cd/E36500_01/E36502/html/qs-guest-additions.html">6.4. Installing the VirtualBox Guest Additions</a></p></blockquote><p>:::info</p><p>Это, пожалуй, самое больное в использовании virtualbox - открыть гую на весь экран. Тут я не буду вам давать никаких обещаний, могу лишь накинуть идеи как вам с этим справиться:</p><p>:::</p><h2>vbguest vagrant plugin</h2><p>:::danger
+У меня сработало лишь один раз :skull:
+:::</p><pre><code class="language-shell">vagrant plugin uninstall vagrant-vbguest
+vagrant destroy -f
+vagrant up
+vagrant plugin install vagrant-vbguest
+vagrant vbguest --do install
+</code></pre><h2>ansible galaxy</h2><p>Используйте мой <a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/examples/karma-kit-devops-gui">пример</a> - Guest Additions установит ansible роль. </p><p>:::caution</p><p>Гарантию, что у вас все сработает дать невозможно, но скорее всего понадобятся минимальные телодвижения.</p><p>:::</p><h2>Секретный вариант</h2><p>Всегда можно погуглить / посмотреть ютуб на тему как сделать <code>Virtualbox</code> на весь экран :wink:</p><p>Удачи и да прибудет с вами сила!</p><p>:::tip</p><p>Если не смотрели, исправьтесь:</p><div class="video-wrapper"><iframe height="540" frameborder="0" width="50%" src="https://www.youtube.com/embed/n1F_MfLRlX0"></iframe></div><p>:::</p>]]></content>
+        <author>
+            <name>Andrew Horbach</name>
+            <uri>https://github.com/karma-git</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[AWS Free Tier и Packer Tutorial]]></title>
         <id>aws-ebs-snapshot</id>
         <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/aws-ebs-snapshot"/>

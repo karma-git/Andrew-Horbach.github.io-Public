@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[203],{3236:function(i){i.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/linux","name":"linux","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/linux"}')}}]);
