@@ -9,7 +9,7 @@ hide_table_of_contents: false
 ---
 # Vagrant - DevOps Environment
 
-# Inspiration
+## Inspiration
 
 Буквально недавно [писал](blog/selfmade-vagrant-box) про сборку `Vagrant`-а, **доделалъ** :tada:, в двух версиях:
 
@@ -49,7 +49,7 @@ import Mermaid from '@theme/Mermaid';
     note over Packer: Releases the Vagrant box on Vagrant Cloud.
 `}/>
 
-# Установка на Windows 
+## Установка на Windows 
 
 Проверьте ресурсы вашей host OS:
 
@@ -72,7 +72,7 @@ systeminfo |findstr /c:"OS Name" /c:"Total Physical Memory"
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/docs/installation)
 
-# VirtualBox Guest Additions
+## VirtualBox Guest Additions
 
 > [6.4. Installing the VirtualBox Guest Additions](https://docs.oracle.com/cd/E36500_01/E36502/html/qs-guest-additions.html)
 
@@ -82,7 +82,7 @@ systeminfo |findstr /c:"OS Name" /c:"Total Physical Memory"
 
 :::
 
-## vbguest vagrant plugin
+### vbguest vagrant plugin
 
 :::danger
 У меня сработало лишь один раз :skull:
@@ -96,7 +96,7 @@ vagrant plugin install vagrant-vbguest
 vagrant vbguest --do install
 ```
 
-## ansible galaxy
+### ansible galaxy
 
 Используйте мой [пример](https://github.com/karma-git/playground/tree/master/environment/vagrant/examples/karma-kit-devops-gui) - Guest Additions установит ansible роль. 
 
@@ -106,7 +106,7 @@ vagrant vbguest --do install
 
 :::
 
-## Секретный вариант
+### Секретный вариант
 
 Всегда можно погуглить / посмотреть ютуб на тему как сделать `Virtualbox` на весь экран :wink:
 
@@ -119,6 +119,43 @@ vagrant vbguest --do install
 <div class="video-wrapper">
   <iframe  height="540" frameborder="0" allowfullscreen width="50%" src="https://www.youtube.com/embed/n1F_MfLRlX0" frameborder="0" allowfullscreen></iframe>
 </div>
+
+:::
+
+<details>
+  <summary>Toggle me!</summary>
+
+    🦖 🦕
+
+</details>
+
+## Links
+
+:::info Links
+
+Ссылки / Статьи которые помогли реализовать идею:
+
+<details>
+<summary>Links</summary>
+
+- [Vagrant - Boxes](https://www.vagrantup.com/docs/boxes)
+- [Packer - Vagrant](https://www.packer.io/plugins/post-processors/vagrant/vagrant-cloud)
+- [Manage your workstation with Ansible: Configure desktop settings](https://opensource.com/article/18/5/manage-your-workstation-ansible-part-3)
+- [Ubuntu 20.04 GUI installation](https://linuxconfig.org/ubuntu-20-04-gui-installation)
+- [A custom Vagrant box with Packer](https://dev.to/mattdark/a-custom-vagrant-box-with-packer-13ke)
+- [Packer: создаем свои vagrant box и docker image из одного конфига](https://blog.popstas.ru/blog/2017/03/26/packer-create-vagrant-box-from-ansible-playbook/)
+- [Enabling VirtualBox Guest Additions in Vagrant](https://subscription.packtpub.com/book/virtualization-and-cloud/9781786464910/1/ch01lvl1sec12/enabling-virtualbox-guest-additions-in-vagrant)
+- [VBoxManage](https://www.virtualbox.org/manual/ch08.html#vboxmanage-cmd-overview)
+
+**github**:
+- [sys0dm1n/ansible-ubuntu-desktop](https://github.com/sys0dm1n/ansible-ubuntu-desktop)
+- [pantarei/ansible-playbook-ubuntu-desktop](https://github.com/pantarei/ansible-playbook-ubuntu-desktop)
+- [PeterMosmans/ansible-role-virtualbox-guest](https://github.com/PeterMosmans/ansible-role-virtualbox-guest)
+- [dotless-de/vagrant-vbguest/issues/316](https://github.com/dotless-de/vagrant-vbguest/issues/316)
+- [mesaguy/ansible-hashicorp](https://github.com/mesaguy/ansible-hashicorp)
+- [andrewrothstein/ansible-starship](https://github.com/andrewrothstein/ansible-starship)
+
+</details>
 
 :::
 
