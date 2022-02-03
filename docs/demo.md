@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Not implemented.
 
-## Admonitions
+## [Admonitions](https://docusaurus.io/docs/markdown-features/admonitions)
 
 we could customize admotion title
 
@@ -140,7 +140,11 @@ class HelloWorld {
 
 ## Diagrams (Meramid)
 
-> ref: https://github.com/facebook/docusaurus/issues/1258
+:::info
+- [Docs](https://mermaid-js.github.io/mermaid/#/flowchart)
+- [Online Editor](https://mermaid-js.github.io/mermaid-live-editor/)
+
+Don't forget to `import Mermaid from '@theme/Mermaid'` just before the first diagram!
 
 import Mermaid from '@theme/Mermaid';
 
@@ -151,22 +155,7 @@ import Mermaid from '@theme/Mermaid';
 		B-->D[plop lanflz eknlzeknfz];
 `}/>
 
-
 ## Formatting
-
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
-
-<Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
 
 I can write **Markdown** alongside my _JSX_!
 

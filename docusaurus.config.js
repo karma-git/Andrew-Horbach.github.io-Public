@@ -114,7 +114,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['ruby', 'hcl', 'yaml', 'powershell'],
+        additionalLanguages: ['ruby', 'hcl', 'yaml', 'powershell',],
       },
     }),
 };
