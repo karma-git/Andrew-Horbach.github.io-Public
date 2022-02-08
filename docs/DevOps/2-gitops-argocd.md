@@ -200,8 +200,13 @@ import Mermaid from '@theme/Mermaid';
 
 
 ## Demo
+
+<div class="video-wrapper">
+  <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/VfC4d0uLWS4" frameborder="0" allowfullscreen></iframe>
+</div>
+
 :::note
-https://gitlab.com/publi8/
+Код из demo: https://gitlab.com/publi8/
 :::
 
 ### Application
@@ -261,7 +266,7 @@ CMD ["main:app", "--reload", "--host=0.0.0.0", "--port=8000"]
 <Tabs defaultValue="app">
 <TabItem value="app" label="Application">
 
-```yaml
+```yaml {12-17}
 ---
 
 kind: Application
@@ -275,7 +280,7 @@ spec:
   project: default
   source:
     repoURL: https://gitlab.com/publi8/demo-environment.git
-    targetRevision: master
+    targetRevision: main
     path: ./demo-app
     directory:
       recurse: true
@@ -290,7 +295,7 @@ spec:
 </TabItem>
 <TabItem value="deploy" label="Deployment">
 
-```yaml
+```yaml {31}
 ---
 apiVersion: v1
 kind: Service
@@ -301,8 +306,8 @@ spec:
   selector:
     app: demo-app
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 8000
+    targetPort: 8000
 ...
 ---
 apiVersion: apps/v1
@@ -321,9 +326,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        # FIXME: tag latest is against rules
-        imagePullPolicy: Always
-        image: registry.gitlab.com/publi8/demo-application:latest
+        image: registry.gitlab.com/publi8/demo-application
         resources:
           requests:
             cpu: "20m"
@@ -332,19 +335,83 @@ spec:
             cpu: "30m"
             memory: "64Mi"
         ports:
-        - containerPort: 8080
-        startupProbe: {}
-        livenessProbe: {}
-        readinessProbe: {}
+        - containerPort: 8000
 ```
 </TabItem>
 </Tabs>
 
 ### Environment Init
 
-### Example Update
-#### App
-#### Env
+#### Argo UI
+Создаем неймспейс для argo, добавляем чарт и устанавливаем релиз.
+
+```shell
+kubectl create ns argocd
+helm repo add argo https://argoproj.github.io/argo-helm
+helm upgrade --install argocd argo/argo-cd --namespace argocd
+```
+Ждем пока поднимутся поды argocd:
+```shell
+watch kubectl get pod -n argocd
+```
+В отдельном терминале делаем pf argo ui:
+```shell
+kubectl port-forward service/argocd-server -n argocd 8080:443
+```
+Смотрим пароль от argo ui:
+```shell
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+**Argo UI** - http://127.0.0.1:8080
+
+#### App UI
+
+Создаем `Argo Application`
+
+```shell
+kubectl create -f demo-app.yml
+watch kubectl get pod -n default
+```
+В отдельном терминале делаем pf app ui:
+```shell
+kubectl port-forward service/demo-app -n default 8000:8000
+```
+Делаем запрос к сервису:
+```json
+$ http http://127.0.0.1:8000/version
+HTTP/1.1 200 OK
+content-length: 20
+content-type: application/json
+date: Tue, 08 Feb 2022 05:03:42 GMT
+server: uvicorn
+
+{
+    "version": "demo-1"
+}
+```
+Удалим все деплойменты и убедимся, что арго вернет все как было:
+```shell
+kubectl -n default delete deploy --all
+```
+
+#### Example Update
+
+- обновляем приложение
+- меняем тег образа в deployment-е и коммитим изменения
+Приложение обновилось:
+```json
+$ http http://127.0.0.1:8000/version
+HTTP/1.1 200 OK
+content-length: 46
+content-type: application/json
+date: Tue, 08 Feb 2022 05:14:42 GMT
+server: uvicorn
+
+{
+    "project": "ArgoCD - Demo",
+    "version": "demo-1"
+}
+```
 
 ## Conclusion
 
