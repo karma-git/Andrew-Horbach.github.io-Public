@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[8966],{8233:function(c){c.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/docker","name":"docker","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/docker"}')}}]);

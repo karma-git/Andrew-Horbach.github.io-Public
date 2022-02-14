@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[9295],{8151:function(e){e.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/kubernetes","name":"kubernetes","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/kubernetes"}')}}]);
