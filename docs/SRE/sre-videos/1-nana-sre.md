@@ -1,7 +1,7 @@
 ---
 id: nana-sre
 title: What is SRE
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Site Reliability Engineering (SRE)
 
@@ -20,6 +20,8 @@ export const Highlight = ({children, color}) => (
 :::info sre
 Hope is not a strategy
 :::
+
+[Nana Janashia](https://www.linkedin.com/in/nana-janashia/)
 
 <div class="video-wrapper">
   <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/OnK4IKgLl24" frameborder="0" allowfullscreen></iframe>
