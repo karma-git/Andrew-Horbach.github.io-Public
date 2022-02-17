@@ -64,6 +64,7 @@ Gartner - исследовательская и консалтинговая к�
 **k8s as a Service**:
 
 |Vendor|Service|Release|
+|---|---|---|
 |AWS|Elastic k8s Service (EKS)|June 2018|
 |Azure|Azure k8s Service (AKS)|June 2018|
 |GCP|Google k8s Engine (GKE) |~ summer 2015|
@@ -146,7 +147,7 @@ Naming is the hardest problem in computer science world:
 
 ---
 
-Это очень интересно посмотреть, даже если вы отлично знаете k8s. В этой презентации я нашел лучшее объяснение того, что такое `Pod`
+> Это очень интересно посмотреть, даже если вы отлично знаете k8s. В этой презентации я нашел лучшее объяснение того, что такое `Pod`
 
 <div class="video-wrapper">
   <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/YrxnVKZeqK8" frameborder="0" allowfullscreen></iframe>
