@@ -4,17 +4,38 @@ title: Kubernetes - The Documentary
 sidebar_position: 2
 ---
 
-:::info "long story short"
-Open Source is most successful when it's played as a 'positive sum' game.
-:::
+import Mermaid from '@theme/Mermaid';
+
+> **Long story short**: Open Source is most successful when it's played as a *positive sum* game.
 
 <details>
-<summary>People</summary>
+<summary>videos, participants </summary>
 
-- Tim Hockin - Principal SW Engineer, K8s, GKE, GCP
-- Kelsey Hightower - Developer Advocate, GCP
-- Brendon Burns - cofounder kubernets
+<div class="video-wrapper">
+  <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/BE77h7dmoQU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="video-wrapper">
+  <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/318elIq37PE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+- [Brendan Burns](https://www.linkedin.com/in/brendan-burns-487aa590/) - Corporate Vice President at Microsoft
+- [Brian Grant](https://www.linkedin.com/in/bgrant0607/) - Distinguished Engineer at Google
+- [Craig McLuckie](https://www.linkedin.com/in/craigmcluckie/) - VP R&D VMware
+- [Joe Beda](https://www.linkedin.com/in/jbeda/) - Principal Engineer VMware
+- [Tim Hockin](https://www.linkedin.com/in/tim-hockin-6501072/) - Principal SW Engineer, K8s, GKE, GCP
+- [Ville Aikas](https://www.linkedin.com/in/villeaikas/) - Founder at Chainguard
+
+:::caution "from author"
+Немного непонятно кто действительно стоял у самых истоков K8s, в документальном фильме Брайан [говорит](https://youtu.be/BE77h7dmoQU?t=976), что это были Брендон, Джо и Вилли. В [wiki](https://ru.wikipedia.org/wiki/Kubernetes) - Брендон, Джо и Крейг. Кажется, что проще присвоить это достижения всем инженерам :point_up: и это не будет неправдой.
+:::
+
+- [Chris Aniszczyk](https://www.linkedin.com/in/caniszczyk/) - CTO CNCF
+- [Clayton Coleman](https://www.linkedin.com/in/claytoncoleman/) - Senior Distinguished Engineer at Red Hat
 - [Eric Brewer](https://www.linkedin.com/in/eric-brewer-1031254/) | [wiki](https://en.wikipedia.org/wiki/Eric_Brewer_(scientist)) - VP Infrastructure & Google Fellow, Professor at UC Berkeley.
+- Kelsey Hightower | [twitter](https://twitter.com/kelseyhightower/status/483644084821557250) - Stuff Developer Advocate, GCP
+- [Chen Goldberg](https://www.linkedin.com/in/goldbergchen/) - Vice President Of Engineering at Google
+- and many others ...
 
 </details>
 
@@ -24,12 +45,35 @@ Open Source is most successful when it's played as a 'positive sum' game.
 
 В тоже время AWS уже стал лидером на рынке облачных вычислений. Компании вроде Google и Microsoft тоже хотят выйти на этот рынок, но понимают, что сильно отстают. Google чувствует, что ему необходимо перенести свою экспертизу в облако, необходим некий *геймченджер*.
 
+<details>
+<summary>cloud vendors - Gartner Magic Quadrant (MQ) </summary>
+
+:::note
+Gartner - сследовательская и консалтинговая компания, специализирующаяся на рынках информационных технологий. Прочитать об их дейтельности и об **MQ** можно [тут](https://ru.wikipedia.org/wiki/Gartner).
+:::
+
+| YY | top3 | MQ |
+| ---- | ---- | --- |
+| [2013](https://cloudmania2013.com/2013/08/29/gartner-iaas-magic-quadrant-2013/) | AWS,CSC,nil | <img src="https://cloudmania2013.files.wordpress.com/2013/08/gartner-mq.png" width="300" height="300" /> |
+| [2015](https://cloudmania2013.com/2015/05/27/gartner-iaas-magic-quadrant-2015/) | AWS,Azure,nil | <img src="https://cloudmania2013.files.wordpress.com/2015/05/mq-iaas-2015.png?w=600&h=600 " width="300" height="300" /> |
+| [2017](https://www.51sec.org/2018/08/11/gartner-magic-quadrant-for-cloud-infrastructure-as-a-service-worldwide-2017-2016-2015-2014-2013-2012/) | AWS,Azure,GCP | <img src="https://www.51sec.org/ezoimgfmt/regmedia.co.uk/2017/06/18/gartner_iaas_mq_june_2017.png?x=648&y=648&infer_y=1&is-pending-load=1&ezimgfmt=rs:400x400/rscb11/ng:webp/ngcb11" width="300" height="300" /> |
+| [2021](https://www.gartner.com/doc/reprints?id=1-271OE4VR&ct=210802&st=sb)| AWS,Azure,GCP|  <img src="https://www.gartner.com/resources/736300/736363/Figure_1_Magic_Quadrant_for_Cloud_Infrastructure_and_Platform_Services.png?reprintKey=1-271OE4VR" width="300" height="300" /> |
+
+</details>
+
 ## :whale: Docker did changed the world
 
-<details>
-<summary>dotScale - Solomon Hykes, Docker </summary>
+Что касается контейнеров - это не новая технология. О её существовании знали, но это была некая секретная информация, доступная лишь ~ 10% компаний на рынке (Google, Uber, Heroku, etc.). Также остальная часть компаний не умело в High Load в production-е, им было сложно масштабировать приложения.
 
-Это очень интересно посмотреть, даже если вы отлично знаете :whale: 
+Docker сделал контейнеры очень простыми и доступными, с возможностью получить моментальную выгоду. :whale: - это инструмент, который элегантно решает свою маленькую задачу по *упаковке* и *доставке* приложений. Docker был обречён на успех. Проблема упаковки и доставки была решена, но что дальше? Как насчет :rocket: деплоймента и оперирования?
+
+<details>
+<summary>details</summary>
+
+:::note
+- Docker bridging gap between **Dev** and **Ops**
+- Ты можешь заниматься приложением и не париться про окружению, запустить приложение локально, в ДЦ, в облаке.
+:::
 
 <div class="video-wrapper">
   <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/3N3n9FzebAA" frameborder="0" allowfullscreen></iframe>
@@ -37,21 +81,20 @@ Open Source is most successful when it's played as a 'positive sum' game.
 
 </details>
 
-Docker - это инструмент, который элегантно решает свою маленькую задачу по упаковке и доставке приложений.
-
-Что касается контейнеров - это не новая технология. О её существовании знали, но это была некая секретная информация, доступная лишь ~ 10% компаний на рынке (Google, Uber, Heroku, etc.). Также остальная часть компаний не умело в High Load в production-е, им было сложно масштабировать приложения.
-
-Docker сделал контейнеры очень простыми и доступными, с возможностью получить моментальную выгоду.
-
-> Ты можешь заниматься приложением и не париться про окружению, запустить приложение локально, в ДЦ, в облаке.
+## :boat: Kubernetes - yet another orchestration tool
 
 :::note
-Docker bridging gap between Dev and Ops.
+Kubernetes был бы невозможен без успеха докера.
 :::
 
-Docker был обречён на успех. Проблема упаковки и доставки была решена, но что дальше? Как насчет деплоймента и оперирования?
+У нас есть клауд (компьютер), а как сделать эту машину полезной? Нужна Developers Platform.
 
-## :boat: Kubernetes - yet another orchestration tool
+Стратегия состояла в том, чтобы сделать новую платформу для облаков, вдохновленную Borg-ом.
+Эта технология должна была стать лидером индустрии в своем сегменте (evaluation of `GKE`) для запуска на ней `workloads`, но Google был недостаточно большим, чтобы сделать это в одиночку. Ему было необходимо много *fellow travelers* вокруг этой технологии. Поэтому было принято решение сделать его *open source* проектом.
+
+За работу взялись несколько инженеров, у кого-то была экспертиза в облаке, у кого-то в Borg-е. Ребята рассказывали идею коллегам, а получилось обратить на нее внимание одного из VP Google в поездке на автобусе. Некоторое время заняло корпоративное противостояние `за` и `против` *Open Source*.
+
+За некоторое временя до *Dockercon*, который прошел в июне 2013, к проекту подключился Крейг из *RedHat*, один из первых внешних контрибьютеров. Он внес большой вклад в чистоту `Go` кода. Прототип успели подготовить к конференции.
 
 <details>
 <summary>Kelsey Hightower - Kubernetes explanation, Promise Theory</summary>
@@ -64,37 +107,37 @@ Docker был обречён на успех. Проблема упаковки 
 
 </details>
 
-Kubernetes был бы невозможен без успеха докера.
-
-> У нас есть клауд (компьютер), а как сделать эту машину полезной? Нужна Developers Platform.
-
-Стратегия состояла в том, чтобы сделать новую платформу для облаков, вдохновленную Borg-ом.
-Эта технология должна была стать лидером индустрии в своем сегменте (evaluation of `GKE`) для запуска на ней `workloads`, но Google был недостаточно большим, чтобы сделать это в одиночку. Ему было необходимо много *fellow travelers* вокруг этой технологии. Поэтому было принято решение сделать его *open source* проектом.
-
-За работу взялись Brendon, Joe, Ville. У кого-то была экспертиза в облаке, у кого-то в Borg-е. Ребята рассказывали идею коллегам, а получилось обратить на нее внимание одного из VP Google в поездке на автобусе. Некоторое время заняло корпоративное противостояние `за` и `против` *Open Source*.
-
-За некоторое временя до *Dockercon*, который прошел в июне 2013, к проекту подключился Craig из RedHat, один из первых внешних контрибьютеров. Он внес большой вклад в чистоту `Go` кода. Прототип успели подготовить к конференции.
-
 ## "Project Seven" - logo, codename 
 
-:::info
+:::note
 Naming is the hardest problem in computer science world:
 :::
 
-Однажды, будучи за рулём, Крейг подумал, что kubernetes это `пилот`. Ребята просто подыскали вариант этого [слова на другом языке](https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82).
+Однажды, будучи за рулём, Крейг подумал, что kubernetes это **пилот**. Ребята просто подыскали вариант этого [слова на другом языке](https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82).
 
 Дизайнеров Google не ограничивали в создании логотипа (это ведь open source project). Но, в итоге, логотип сделал Тим - у него было образование в дизайне. У руля сделали 7 граней, чтобы не терять связь с кодовым названием проекта.
 
 ## Dockercon 2014, k8s announcement
 
-<details>
-<summary>Dockercon - Eric Brewer, Kubernetes </summary>
+В день проведения конференции репозиторий Kubernetes сделали публичным. На самой конференции различные компании / стартапы объявили о своих решениях оркестрации контейнеров (около 5-6).
+У всех в голове была одна и та же идея.
 
-20 June 2014, Eric Brewer (Google).
+<details>
+
+<summary>details</summary>
+
+|tool|company|
+|----|-------|
+|Mesos|RedHat|
+|Docker Swarm|Docker Inc.|
+|Tupperware|Facebook|
+|Kubernetes|Google|
+
+> Хорошая [статья на habr](https://habr.com/ru/company/vk/blog/543232/) по системам оркестрации.
+
+---
 
 Это очень интересно посмотреть, даже если вы отлично знаете kubernetes. В этой презентации я нашел лучшее объяснение того, что такое `Pod`
-
-В этот день открылся репозиторий Kubernetes (под лицензией Google).
 
 <div class="video-wrapper">
   <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/YrxnVKZeqK8" frameborder="0" allowfullscreen></iframe>
@@ -102,37 +145,7 @@ Naming is the hardest problem in computer science world:
 
 </details>
 
-
-RedHat с их RedShift подмазались к Google.
-
-RH anoyncement: opensift v3 will be mesos + docker.
-
-Clayton from RH is the first external contributor, refactor to proper Go semantic - this is a start of proeper community working.
-
-В день докеркона - открыли репу с кубернетесом
-
-. It behind the ideas.
-> В этот день проанонсили 5-6 других систем оркестрации (проприетарные и опен соурс)
-
-У всех была одна идея (not a brand new idea)
-
-На данном конференции различными компании / стартапы объявили о своим решениях оркестрации контейнеров.
-
-|tool|company|comment|
-|----|-------|-------|
-|K8s|Google|not simple, not scalable as mesos|
-|RedHat|Mesos|powerful|
-|libsswarm|Docker|Simple as Possible|
-|tupperware|facebook|-|
-
 ## Cloud Native Compute Foundation (CNCF)
-
-<!-- Kubernetes - kelsey hightower voice of technology(show what is next, invite to contribute), mc on kubecon -->
-
-<details>
-<summary>Kelsey Hightower</summary>
-Примерно в это время, инженер Келси Хайтауэр активно помогал другим участникам индустрии разобраться с вопросом: "Что такое k8s"? Это заметили и его пригласили в Google на позицию Developer Advocate. Таким образом Келси стал *голосом* проекта.
-</details>
 
 Проблемы до CNCF:
 - репозиторий Google
@@ -145,19 +158,28 @@ Clayton from RH is the first external contributor, refactor to proper Go semanti
 - Это мост между конкурирующими вендорами, благодаря сотрудничеству которых выигрывает каждый.
 - Организовал работу над проектом, которая превращалась в хаос (до этого, на вопросы новых участников о проекте, их отправляли спрашивать к `googler's`). Это положительно сказалось на стратегии развития проекта, это называют *sustainable success*.
 
-:::info
+<details>
+<summary>details</summary>
+
+:::note
 Если бы у Kubernetes и Mesos было свое мнение - они бы нашли, что создавать вместе, например storage для контейнера или будущий StatefulSet.
 :::
+
+Примерно в это время, инженер Келси Хайтауэр активно помогал другим участникам индустрии разобраться с вопросом: "Что такое k8s"? Это заметили и его пригласили в Google на позицию Developer Advocate. Таким образом Келси стал *голосом* проекта.
+
+</details>
 
 ## Pokemon Go on GKE
 
 ![img](../../../static/pokemongo.jpg)
 
-Niantic запустили свою игру на самых первых версиях GKE. Разработчики Kubernetes превратились в 24/7 oncall-support для инфрастуктуры этой игры.
-
-> (тут нужно добавить предложение, из которого понятно, что она рассказывает о том, как они это говорили)'Please stop playing we are not ready for that!' But what was actually amazing is that we were actually ready for that.
+Niantic запустили свою игру на самых первых версиях GKE, а разработчики Kubernetes превратились в 24/7 oncall-support для инфрастуктуры этой игры.
 
 Игра росла просто взрывными темпами и благодаря K8s у ребят получилось отскейлиться под исходящую нагрузку. Это был ответ всем, почему K8s.
+
+:::note
+*Chen Goldberg*: In my head all I was thinking was "Please stop playing! We are not ready for that!" But what was actually amazing is that we were actually ready for that.
+:::
 
 ## Docker vs Kubernetes. Containers wars
 
@@ -173,6 +195,20 @@ Kubernetes evolution is same exiting as docker. Google is stealing docker's thun
 - Everyone wants to be on top of the value chain.
 - Who own the mindset of the engineers - this is very value is.
 :::
+
+<Mermaid chart={`
+  flowchart LR
+    linux[linux kernel]
+    k8s[kubernetes / kubelet ]
+    app[application / service ]
+    subgraph runtime
+        d1[Docker container]
+        d2[Docker container]
+    end
+    linux --> runtime
+    runtime --> k8s
+    k8s --> app
+`}/>
 
 K8s это: linux + docker runtime + etcd в качестве хранилища. По сути - это коллаборация различных технологий.
 
