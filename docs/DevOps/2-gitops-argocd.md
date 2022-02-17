@@ -76,12 +76,11 @@ Source: https://digital.ai/periodic-table-of-devops-tools/
 
 <Mermaid chart={`
   flowchart TB
-    linux[linux kernel]
-    subgraph docker
-        d1[Docker container]
-        d2[Docker container]
-        d3[Docker container]
-        d4[Docker container]
+    api((kube-api))
+    subgraph workers
+        n1[node1]
+        n2[node2]
+        nx[nodeX]
     end
     
     client --> api
