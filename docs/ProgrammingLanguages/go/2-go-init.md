@@ -15,6 +15,8 @@ About the course
 
 ## EPAM(community-z): [Golang United](https://habr.com/ru/company/epam_systems/news/t/648023/)
 
+:books: https://github.com/karma-git/epam-golang-united - Артефакт обучения на данном курсе.
+
 :::info
 Golang United — комьюнити, основанное опытными разработчиками EPAM, объединив экспертизу участников и их любовь к Go, запускает свою бесплатную учебную программу для начинающих гоферов — «Golang United School».
 
