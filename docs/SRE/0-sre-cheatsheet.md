@@ -8,4 +8,11 @@ sidebar_position: 1
 - Observability
 - HA, Reliability
 - Automation, Toil
-- PRO, RTO
+- RTO, RPO
+
+## RPO, RTO
+
+- RPO - Recovery Point Objective = DATA LOSS - **Время** - сколько информации можно потерять при Disaster. *Например: последние 2 часа*
+- RTO - Recovery Time Objective = DOWNTIME - **Время** - сколько время возьмет восстановить работоспособность системы при Disater. **Например: 12 часов.**
+
+![img](https://ah-public-pictures.hb.bizmrg.com/sre/RTO%2CRPO-schema.png)
