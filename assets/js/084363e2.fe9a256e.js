@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[3097],{3322:function(s){s.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/docops","name":"docops","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/docops"}')}}]);

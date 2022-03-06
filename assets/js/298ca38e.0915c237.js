@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[2397],{7124:function(a){a.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/ipad","name":"ipad","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/ipad"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[508],{6175:function(s){s.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/prometheus","name":"prometheus","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/prometheus"}')}}]);

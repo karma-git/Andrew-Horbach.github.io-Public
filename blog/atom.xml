@@ -109,6 +109,19 @@ build {
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[GoodNotes - Prometheus]]></title>
+        <id>goodnotes-prometheus</id>
+        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/goodnotes-prometheus"/>
+        <updated>2021-03-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[заметки на iPad, Prometheus]]></summary>
+        <content type="html"><![CDATA[<h2>iPad. Long Story Short</h2><p>Относительно недавно заимел iPad + Pencil + <a href="https://www.logitech.com/ru-ru/products/ipad-keyboards/combo-touch.html">Logitech Combo Touch</a> для рисования рисунков, заметок и конспектов, легковесной замене ноута в случае инцидентов.</p><ul><li>рисование -&gt; кул с <a href="https://apps.apple.com/us/app/procreate/id425073498">procreate</a></li><li>заметки / конспект -&gt; нравиться с <a href="https://www.goodnotes.com/">goodnotes</a></li><li>замена ноута -&gt; в Logitech отвратный клик на тач и куча проблем самого iPad. Но используя проект <a href="https://github.com/coder/code-server">code-server</a> - я могу работать за iPad. Однако считаю, что поэтому пункту скорее неуд.</li></ul><h2>GoodNotes</h2><p>Софтина как бы примитивная, но можно создавать вот такие конспекты <em>from scratch</em></p><p><img src="https://ah-public-pictures.hb.bizmrg.com/sre/goodnotes-prom.jpg" alt="img"/></p><p>Либо загружать в эту софтину <code>PDF</code>-ы и редактировать уже их:</p><p><img src="https://ah-public-pictures.hb.bizmrg.com/sre/goodnotes-gounited.jpg" alt="img"/></p><p>:::note</p><p>:pencil2: Мне сложно это объяснить, но есть что-то тактильно приятное в том, чтобы писать что-то от руки, при этом конспект не превратиться в мусор.</p><p>Хочется снова пойти в универ :books:
+:::</p><h2>Links</h2><ul><li><a href="https://medium.goodnotes.com/how-to-create-good-looking-notes-on-the-ipad-50289cb37d90">How to create good-looking notes on the iPad</a></li><li><a href="https://medium.goodnotes.com/how-to-markup-pdf-ipad-dc6b25c144bb">How to Mark Up a PDF on the iPad</a></li></ul><p><strong>TechWorld with Nana</strong> about prometheus:</p><ul><li><a href="https://www.youtube.com/watch?v=h4Sl21AKiDg">How Prometheus Monitoring works | Prometheus Architecture explained</a></li><li><a href="https://www.youtube.com/watch?v=QoDqxm7ybLc">Setup Prometheus Monitoring on Kubernetes using Helm and Prometheus Operator | Part 1</a></li><li><a href="https://www.youtube.com/watch?v=mLPg49b33sA">Prometheus Monitoring - Steps to monitor third-party apps using Prometheus Exporter | Part 2</a></li></ul><p><strong>Go United</strong></p><ul><li><a href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/docs/ProgrammingLanguages/go/go-init">Article</a></li><li><a href="https://github.com/karma-git/epam-golang-united">Repo</a></li></ul>]]></content>
+        <author>
+            <name>Andrew Horbach</name>
+            <uri>https://github.com/karma-git</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[CKA]]></title>
         <id>cka-commitment</id>
         <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/cka-commitment"/>
