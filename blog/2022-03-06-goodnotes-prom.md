@@ -3,7 +3,7 @@ title: GoodNotes - Prometheus
 description: заметки на iPad, Prometheus
 slug: goodnotes-prometheus
 authors: [a.horbach]
-tags: [docops, ipad, observability, monitoring, prometheus]
+tags: [docops, ipad, productivity, observability, monitoring, prometheus]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
