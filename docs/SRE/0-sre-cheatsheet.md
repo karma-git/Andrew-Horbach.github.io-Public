@@ -1,6 +1,6 @@
 ---
 id: 0-sre-cheatsheet
-title: SRE CheatSheet
+title: Site Reliability Engineering (SRE) CheatSheet
 sidebar_position: 1
 ---
 
