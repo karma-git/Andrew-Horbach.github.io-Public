@@ -73,7 +73,63 @@ $$
 
 Наличие плана действия: runbook | playbook помогает дежурному инженеру быстрее решать проблему, но тем не менее инженер должен быть готов к неожиданностям. В google есть практические упражнения на устранение аварий: **“Wheel of Misfortune”**
 
+#### Change Management
+
+SRE has found that roughly **70%** of outages are due to changes in a live system.
+
+- Implementing progressive rollouts
+- Quickly and accurately detecting problems
+- Rolling back changes safely when problems arise
+
+Усталость, расслабленность, пренебрежение и невнимательность - эти человеческие факторы должны быть побеждены автоматизацией.
+
+#### Demand Forecasting and Capacity Planning
+
+Система должна иметь достаточную производительность чтобы обеспечивать заданный показатель доступности. Для этого нужно предпринимать следующие шаги:
+
+- прогнозирование роста
+- push-и
+- нагрузочное тестирование
+
+#### Provisioning
+
+Провиженинг и бустрапинг новых инстансов в ЦОД-е или облаке тоже сопряжено с некоторыми рисками.
+
+#### Efficiency and Performance
+
+SRE должны следить за утилизацией ресурсов и таким образом думать о костах.
+
 ### The End of the Beginning
+
+“as a software engineer, this is how I would want to invest my time to accomplish a set of repetitive tasks”
+
+## Part 2.  The Production Environment at Google, from the Viewpoint of an SRE
+
+- Machine: A piece of hardware (or perhaps a VM)
+- Server: A piece of software that implements a 
+service
+
+Градация: machine in rack-unit,rack,row,cluster(logical),dc,campus(eg. availability zone)
+
+Сеть: Jupiter(фабрика коммутаторов с bandwidth ~1.3 Пб/с).
+
+**Borg**
+
+#### Managing Machines
+
+![img](https://ah-public-pictures.hb.bizmrg.com/sre/sre-book/p2-borg-architecture.png)
+
+Borg (похож на mesos) - он оперирует **job**-ами, это может быть запуск демона и etc. Borg шедулид джобы на разные ноды и следит за то чтобы они там выполнялись (scheduler,kubelet).
+
+Обращение в job-е идет по BNS(Borg Naming Service) имени: `/bns/<cluster>/<user>/<job name>/<task number>`, BNS резоливится в `<IP address>:<port>` (k8s - `<svc-name>.<ns>.svc.cluster.local` kube-dns или `<svc-name>.<ns>:<port>` для доступа внутри куба)
+
+Scheduler как и в k8s следит за ресурсами которые запрашивает job-а, а так же старается назначать джобы на машины в разных стойках.
+
+#### Storage
+
+![img](https://ah-public-pictures.hb.bizmrg.com/sre/sre-book/p2-storage.png)
+
+СХД от google для Borg-а можно сравнить с Lustre и Hadoop Distributed File System (HDFS)
 
 <!-- Unreleased -->
 ## Unreleased
