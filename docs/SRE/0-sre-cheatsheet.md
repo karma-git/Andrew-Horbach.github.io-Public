@@ -16,3 +16,6 @@ sidebar_position: 1
 - RTO - Recovery Time Objective = DOWNTIME - **Время** - сколько время возьмет восстановить работоспособность системы при Disater. *Например: 12 часов.*
 
 ![img](https://ah-public-pictures.hb.bizmrg.com/sre/RTO%2CRPO-schema.png)
+
+<!-- TODO -->
+## [Google SRE]()

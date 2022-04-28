@@ -1,18 +1,18 @@
 FROM alpine:3.14
 
 RUN apk add \
-    nodejs~=14.18 \ 
-    yarn~=1.22 \
+  nodejs~=14.19 \ 
+  yarn~=1.22 \
   && yarn install
 
 RUN addgroup --gid 10001 app \
   && adduser \
-    --uid 10001 \
-    --home /home/app \
-    --shell /bin/ash \
-    --ingroup app \
-    --disabled-password \
-    app
+  --uid 10001 \
+  --home /home/app \
+  --shell /bin/ash \
+  --ingroup app \
+  --disabled-password \
+  app
 
 COPY ./ /home/app
 
