@@ -1,10 +1,10 @@
 ---
 id: 1-introduction.md
-title: Part 1.  Introduction
+title: Chapter 1.  Introduction
 sidebar_position: 1
 ---
 
-# Part 1.  Introduction
+# Chapter 1.  Introduction
 
 <!-- ### The Sysadmin Approach to Service Management -->
 

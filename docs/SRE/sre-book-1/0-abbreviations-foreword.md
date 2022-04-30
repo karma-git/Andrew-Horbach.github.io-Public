@@ -4,6 +4,8 @@ title: Abbreviations & Part 0.  Foreword
 sidebar_position: 0
 ---
 
+![sre-book](https://ah-public-pictures.hb.bizmrg.com/sre/sre-book/SRE-book.jpeg)
+
 https://g.co/SREbook
 
 ## abbreviations
@@ -17,8 +19,20 @@ https://g.co/SREbook
 - BE - backend - наооборот
 - RPC - Remote Procedure Call - протокол удаленного вызова процедур
 - BNS - Borg Naming Service - адрес до экземпляра приложения <!-- ссылка на p2 -->
+- EB - Error Budget - сколько времени сервис может "лежать", основывается на SLO 
 
-## Part 0.  Foreword
+## Parts
+
+...
+
+### Part II - Принципы
+
+- Риски
+- SLO, SLA, SLI
+- метрики и мониторинг
+- toil и автоматизация
+
+## Chapter 0.  Foreword
 
 ### Foreword
 

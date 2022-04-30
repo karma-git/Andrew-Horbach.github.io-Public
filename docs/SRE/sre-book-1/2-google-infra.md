@@ -1,10 +1,10 @@
 ---
 id: 2-sre-book
-title: Part 2.  Google Infra
+title: Chapter 2.  Google Infra
 sidebar_position: 2
 ---
 
-# Part 2.  The Production Environment at Google, from the Viewpoint of an SRE
+# Chapter 2.  The Production Environment at Google, from the Viewpoint of an SRE
 
 - Machine: A piece of hardware (or perhaps a VM)
 - Server: A piece of software that implements a 
@@ -89,14 +89,21 @@ MapReduce:
 
 Зная примерное количество запросов в секунду которое может обрабатывать один экземпляр бэкэнда приложения - вычисляем сколько нужно и как их географически разнести. Как геораспределенные бэки будут ходить в базу.
 
-## Symlinks
+## Key Insights
 
-:::info
+<details>
+<summary>Symlinks</summary>
 
 <!-- TODO: -->
 - blobstore - (26)
 - geo DNS - (19)
 - gRPC - (20)
 - Chubby - (23)
+
+</details>
+
+:::note
+
+Empty
 
 :::
