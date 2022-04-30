@@ -1,5 +1,5 @@
 ---
-id: 2-sre-book
+id: 4-slo
 title: Chapter 4.  Service Level Objectives
 sidebar_position: 4
 ---

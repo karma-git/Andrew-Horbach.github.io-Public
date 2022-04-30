@@ -1,5 +1,5 @@
 ---
-id: 2-sre-book
+id: 2-google-infra
 title: Chapter 2.  Google Infra
 sidebar_position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-id: 2-sre-book
+id: 3-risks
 title: Chapter 3.  Embracing Risk
 sidebar_position: 3
 ---
