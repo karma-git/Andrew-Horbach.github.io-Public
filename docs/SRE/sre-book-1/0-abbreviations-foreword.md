@@ -19,7 +19,9 @@ https://g.co/SREbook
 - BE - backend - наооборот
 - RPC - Remote Procedure Call - протокол удаленного вызова процедур
 - BNS - Borg Naming Service - адрес до экземпляра приложения <!-- ссылка на p2 -->
-- EB - Error Budget - сколько времени сервис может "лежать", основывается на SLO 
+- EB - Error Budget - сколько времени сервис может "лежать", основывается на SLO
+- MTTR - mean time to repair - среднее время восстановления (disaster recovery)
+- SOA - service-oriented-architecture - то набор архитектурных принципов, не зависящих от технологий и продуктов, совсем как полиморфизм или инкапсуляция.
 
 ## Parts
 
