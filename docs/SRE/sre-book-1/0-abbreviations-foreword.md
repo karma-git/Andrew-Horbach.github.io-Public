@@ -22,6 +22,7 @@ https://g.co/SREbook
 - EB - Error Budget - сколько времени сервис может "лежать", основывается на SLO
 - MTTR - mean time to repair - среднее время восстановления (disaster recovery)
 - SOA - service-oriented-architecture - то набор архитектурных принципов, не зависящих от технологий и продуктов, совсем как полиморфизм или инкапсуляция.
+- [MPM](https://luke.carrier.im/notes/549119f2-27aa-4bbb-b4cc-9634b001d477/) - midas package manager -  внутренний менеджер пакетов google.
 
 ## Parts
 
