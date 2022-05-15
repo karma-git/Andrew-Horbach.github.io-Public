@@ -23,6 +23,7 @@ https://g.co/SREbook
 - MTTR - mean time to repair - среднее время восстановления (disaster recovery)
 - SOA - service-oriented-architecture - то набор архитектурных принципов, не зависящих от технологий и продуктов, совсем как полиморфизм или инкапсуляция.
 - [MPM](https://luke.carrier.im/notes/549119f2-27aa-4bbb-b4cc-9634b001d477/) - midas package manager -  внутренний менеджер пакетов google.
+- TSDB - time series database - БД, оптимизированная для хранения временных рядов
 
 ## Parts
 
@@ -34,6 +35,12 @@ https://g.co/SREbook
 - SLO, SLA, SLI
 - метрики и мониторинг
 - toil и автоматизация
+
+### Part III - Практики
+
+Пирамида надежности:
+
+![img](https://ah-public-pictures.hb.bizmrg.com/sre/sre-book/p3-reliability-pyramid.png)
 
 ## Chapter 0.  Foreword
 
