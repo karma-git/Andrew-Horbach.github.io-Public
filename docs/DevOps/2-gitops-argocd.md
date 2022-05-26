@@ -32,10 +32,10 @@ Source: https://digital.ai/periodic-table-of-devops-tools/
 
 
 | 1. Cloud :cloud: | 2. Docker :whale: | 3. Orchestration :boat: | 4. CI/CD :rocket: | 5. K8s GitOps operators :octopus: |
-| ------------- | -------------- | -------------------- | -------------- | ------------------------------ |
-| AWS           | Docker Engine  | Kubernetes           | Jenkins        | Argo CD                        |
-| Azure         | CRI-O          | Docker Swarm         | GitLab CI/CD   | Flux CD                        |
-| others        | others         | others               | others         | others                         |
+| ---------------- | ----------------- | ----------------------- | ----------------- | --------------------------------- |
+| AWS              | Docker Engine     | Kubernetes              | Jenkins           | Argo CD                           |
+| Azure            | CRI-O             | Docker Swarm            | GitLab CI/CD      | Flux CD                           |
+| others           | others            | others                  | others            | others                            |
 
 ### Cloud :cloud:
 
@@ -173,14 +173,14 @@ import Mermaid from '@theme/Mermaid';
 
 ### GitOps vs IaC(CI_OPs)
 
-|...                   | GitOps            |IaC                                  |
-|----------------------|-------------------|-------------------------------------|
-|Paradigm :moyai:             | `Pull` (_Declarative_) | `Push` (_Imperative_)                     |
-|Code Storage :bank:          | Git               |may not be in Git                    |
-|Code Changes Process :raising_hand: | GitXXX flow       |GitXXX flow or manual                |
-|Infrastructure Updates :wrench:  | **Automated**         |CI or manual                         |
-|Access :guardsman:                | Operator to git   |CI or operator to K8s api            |
-|Infra Changes :collision:        | Git               |helm rollback,upgrade,delete and etc.|
+| ...                                 | GitOps                 | IaC                                   |
+| ----------------------------------- | ---------------------- | ------------------------------------- |
+| Paradigm :moyai:                    | `Pull` (_Declarative_) | `Push` (_Imperative_)                 |
+| Code Storage :bank:                 | Git                    | may not be in Git                     |
+| Code Changes Process :raising_hand: | GitXXX flow            | GitXXX flow or manual                 |
+| Infrastructure Updates :wrench:     | **Automated**          | CI or manual                          |
+| Access :guardsman:                  | Operator to git        | CI or operator to K8s api             |
+| Infra Changes :collision:           | Git                    | helm rollback,upgrade,delete and etc. |
 
 ### Argo CD
 
@@ -202,7 +202,7 @@ import Mermaid from '@theme/Mermaid';
 ## Demo
 
 <div class="video-wrapper">
-  <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/VfC4d0uLWS4" frameborder="0" allowfullscreen></iframe>
+  <iframe  height="540" frameborder="0" allowfullscreen width="100%" src="https://www.youtube.com/embed/90FZQxcnJgk" frameborder="0" allowfullscreen></iframe>
 </div>
 
 :::note
