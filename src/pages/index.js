@@ -35,9 +35,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         {/* <HomepageFeatures /> */}
-        <div className="container">
-          <img src={useBaseUrl('/img/ah.jpg')} alt="Me" />
-        </div>
+        <img src={useBaseUrl('/img/ah.jpg')} alt="Me" />
       </main>
     </Layout>
   );
