@@ -4,10 +4,11 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+// import HomepageFeatures from '../components/HomepageFeatures';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -16,8 +17,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/demo">
-            docusaurus 🦖 - quickstart - ⛷️
+            to="/docs/SRE/0-sre-cheatsheet">
+            Site Reliability Engineering 🦎
           </Link>
         </div>
       </div>
@@ -26,14 +27,17 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        {/* <HomepageFeatures /> */}
+        <div className="container">
+          <img src={useBaseUrl('/img/ah.jpg')} alt="Me" />
+        </div>
       </main>
     </Layout>
   );

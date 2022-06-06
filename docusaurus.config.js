@@ -10,7 +10,7 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Andrew Horbach',
-  tagline: 'My personal page',
+  tagline: "Currently I'm learning",
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/Andrew-Horbach.github.io-Public/',
   onBrokenLinks: 'throw',
