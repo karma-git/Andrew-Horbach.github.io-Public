@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog</id>
+    <id>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog</id>
     <title>Andrew Horbach Blog</title>
     <updated>2022-03-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog"/>
+    <link rel="alternate" href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog"/>
     <subtitle>Andrew Horbach Blog</subtitle>
-    <icon>https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/img/favicon.ico</icon>
+    <icon>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Notion]]></title>
         <id>notion-crush-course</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/notion-crush-course"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/notion-crush-course"/>
         <updated>2022-03-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Notion Fast Start]]></summary>
         <content type="html"><![CDATA[<h2>Long Story Short</h2><p>Уже пару месяцев использую <code>Notion</code> для заметок, но делал все относительно топорно. У меня было много страничек древовидной структуры и канбан доска с тасками на неделю. Правда недавно взглянул в темплейты от самого <code>Notin</code>-а и скопировал оттуда <em>engineering page</em> (ниже пример под спойлером).</p><p>:::info</p><details><summary>мой канбан борд</summary><p><img src="https://ah-public-pictures.hb.bizmrg.com/it-happens/Screenshot%202022-03-08%20at%2014.00.48.png" alt="img"/></p></details><p>:::</p><p>Посмотрел видео Владлена, нашел много полезного (ниже будет pdf с конспектом)</p><div class="video-wrapper"><iframe height="540" frameborder="0" width="100%" src="https://www.youtube.com/embed/JbJducQmxqw"></iframe></div><p><strong>Конспект</strong>:</p><p><a href="https://ah-public-pictures.hb.bizmrg.com/it-happens/notion-video.pdf">Ссылка на файл</a></p><embed src="https://ah-public-pictures.hb.bizmrg.com/it-happens/notion-video.pdf" type="application/pdf" width="100%" height="600px"/>]]></content>
@@ -22,7 +22,7 @@
     <entry>
         <title type="html"><![CDATA[GoodNotes - Prometheus]]></title>
         <id>goodnotes-prometheus</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/goodnotes-prometheus"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/goodnotes-prometheus"/>
         <updated>2022-03-06T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[заметки на iPad, Prometheus]]></summary>
         <content type="html"><![CDATA[<h2>iPad. Long Story Short</h2><p>Относительно недавно заимел iPad + Pencil + <a href="https://www.logitech.com/ru-ru/products/ipad-keyboards/combo-touch.html">Logitech Combo Touch</a> для рисования рисунков, заметок и конспектов, легковесной замене ноута в случае инцидентов.</p><ul><li>рисование -&gt; кул с <a href="https://apps.apple.com/us/app/procreate/id425073498">procreate</a></li><li>заметки / конспект -&gt; нравиться с <a href="https://www.goodnotes.com/">goodnotes</a></li><li>замена ноута -&gt; в Logitech отвратный клик на тач и куча проблем самого iPad. Но используя проект <a href="https://github.com/coder/code-server">code-server</a> - я могу работать за iPad. Однако считаю, что поэтому пункту скорее неуд.</li></ul><h2>GoodNotes</h2><p>Софтина как бы примитивная, но можно создавать вот такие конспекты <em>from scratch</em></p><p><img src="https://ah-public-pictures.hb.bizmrg.com/sre/goodnotes-prom.jpg" alt="img"/></p><p>Либо загружать в эту софтину <code>PDF</code>-ы и редактировать уже их:</p><p><img src="https://ah-public-pictures.hb.bizmrg.com/sre/goodnotes-gounited.jpg" alt="img"/></p><p>:::note</p><p>:pencil2: Мне сложно это объяснить, но есть что-то тактильно приятное в том, чтобы писать что-то от руки, при этом конспект не превратиться в мусор.</p><p>Хочется снова пойти в универ :books:
@@ -35,7 +35,7 @@
     <entry>
         <title type="html"><![CDATA[Selfmade Vagrant box]]></title>
         <id>selfmade-vagrant-box</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/selfmade-vagrant-box"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/selfmade-vagrant-box"/>
         <updated>2022-01-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[VagrantBox собирается настолько же просто как и DockerImage!]]></summary>
         <content type="html"><![CDATA[<p>На VagrantCloud не нашел нормальных box-ов с GUI.</p><h2>Процесс</h2><p>:::info
@@ -136,7 +136,7 @@ build {
     <entry>
         <title type="html"><![CDATA[CKA]]></title>
         <id>cka-commitment</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/cka-commitment"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/cka-commitment"/>
         <updated>2021-02-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[начал готовиться к экзамену]]></summary>
         <content type="html"><![CDATA[<p>Буду краток, у вас мало времени: Certified Kubernetes Administrator <a href="https://www.cncf.io/certification/cka/">(CKA)</a> один из крутейших сертификатов.</p><h2>Articles</h2><p>Нашел пару хороших ресурсов, чтобы с чего начать:</p><ul><li><a href="https://devopscube.com/cka-exam-study-guide/">devopscube about CKA</a> - очень много хороших советов и кросс-ссылок, добавил сайт в закладки</li><li><a href="https://medium.com/4th-coffee/passing-the-cka-certified-kubernetes-administrator-exam-in-70-minutes-a-detailed-guide-dc945ba4065d">medium</a> - на контрасте с предыдущей статьей как-то блекло</li><li><a href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/?ranMID=39197&amp;ranEAID=AfpokvaRFDA&amp;ranSiteID=AfpokvaRFDA-sXs.MeTftBrEzGs26ywPuw&amp;utm_source=aff-campaign&amp;LSNPUBID=AfpokvaRFDA&amp;utm_medium=udemyads">udemy</a> - для визуалов, учитель из 🇮🇳 , курс как всегда лучше брать за 999р, но можно найти и на пиратских ресурсах</li></ul><h2>About Exam</h2><p>Можно использовать:</p><ul><li>Второй монитор</li><li><a href="https://kubernetes.io/">https://kubernetes.io/</a>*  (да, это вайлдкард, можно читать доку и блог)</li><li><a href="https://github.com/kubernetes/">https://github.com/kubernetes/</a></li></ul><p>Говорят проходить <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way"><code>the hard way</code></a> не обязательно.</p><table><thead><tr><th>Theme</th><th>percentage</th><th>comment</th></tr></thead><tbody><tr><td>Cluster Architecture, Installation &amp; Configuration</td><td>25 %</td><td><code>kubeadm</code>, Container Runtime Interface (CRI)</td></tr><tr><td>Workloads &amp; Scheduling</td><td>15 %</td><td><code>workloads</code> (configure po,deploy,sts,job,cj,ds and etc.); <code>nodes</code> - (drain,cordon,nodeselector,affinity,taint)</td></tr><tr><td>Services &amp; Networking</td><td>20 %</td><td>Container Network Interface (CNI) (networking, connectivity between pods - policy, CoreDNS, etc.)</td></tr><tr><td>Storage</td><td>10 %</td><td>Container Storage Interface (CSI) - sc,pvc,pv - extend pv and etc (?ceph)</td></tr><tr><td>RBAC</td><td>X %</td><td>role based access</td></tr><tr><td>Troubleshooting</td><td>30 %</td><td>see spoiler</td></tr></tbody></table><details><summary>Toggle me!</summary><ul><li><p>What if a node is not ready?</p></li><li><p>What if a pod is frequently restarting, and you need to figure out why?</p></li><li><p>What if all CPU resource is used up and you need to find out which pod consumes the most and why?</p></li><li><p>How to monitor certain resources?</p></li><li><p>How to troubleshoot a failed component?</p><p>:::info
@@ -150,7 +150,7 @@ For example, if you want to monitor the CPU resource each pod uses or each node 
     <entry>
         <title type="html"><![CDATA[Vagrant - DevOps Environment]]></title>
         <id>vagrant-karma-linux</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/vagrant-karma-linux"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/vagrant-karma-linux"/>
         <updated>2021-02-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Собрал Linux для людей]]></summary>
         <content type="html"><![CDATA[<h2>Inspiration</h2><p>Буквально недавно <a href="blog/selfmade-vagrant-box">писал</a> про сборку <code>Vagrant</code>-а, <strong>доделалъ</strong> :tada:, в двух версиях:</p><ul><li>в серверной работаем через ssh </li><li>и gui, установлены разные desktop приложения :computer:</li></ul><p><a href="https://asciinema.org/a/58jLHlUsCZA63uGjIClQcX5r0"><img src="https://asciinema.org/a/58jLHlUsCZA63uGjIClQcX5r0.svg" alt="asciicast"/></a></p><p>:::info &quot;Этапы&quot;</p><ul><li><a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/build">Сборка Packer-ом</a></li><li><a href="https://github.com/karma-git/playground/tree/master/ansible">Ansible</a></li><li><a href="https://app.vagrantup.com/karma-kit">Vagrant Cloud</a></li><li><a href="https://github.com/karma-git/playground/tree/master/environment/vagrant/examples">Vagrantfile examples</a></li></ul><p>:::</p><p>Или схематично:</p><div chart="
@@ -188,7 +188,7 @@ vagrant vbguest --do install
     <entry>
         <title type="html"><![CDATA[AWS Free Tier и Packer Tutorial]]></title>
         <id>aws-ebs-snapshot</id>
-        <link href="https://your-docusaurus-test-site.com/Andrew-Horbach.github.io-Public/blog/aws-ebs-snapshot"/>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/aws-ebs-snapshot"/>
         <updated>2021-01-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Используете AWS Free Tier? Настроили Billing Alarms?]]></summary>
         <content type="html"><![CDATA[<h1>Предыстория</h1><p>Когда я только знакомился с AWS по youtube плейлисту, я смастерил <code>VPC</code> в двух <code>AZ</code> с несколькими подсетями. Один из типов подсетей был private - с <code>nat-gateway</code>, в курсах забыли сказать, что они не входят во фритир. За пару дней за 2 гейта накапало около <strong>$6</strong>. Было обидно, я поставил биллинг аларм.</p><p>:::info #!NOTE
