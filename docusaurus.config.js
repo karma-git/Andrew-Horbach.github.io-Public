@@ -20,8 +20,8 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: gitRepoOrg, // Usually your GitHub org/user name.
-  projectName: gitRepoName, // Usually your repo name.
+  organizationName: gitRepoOrg,
+  projectName: gitRepoName,
 
   // ref: https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -33,14 +33,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: `${gitFullPath}/docs`,
+          editUrl: gitFullPath,
           // match-equations
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
         blog: {
           showReadingTime: true,
-          editUrl: `${gitFullPath}/blog`,
+          editUrl: gitFullPath,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
