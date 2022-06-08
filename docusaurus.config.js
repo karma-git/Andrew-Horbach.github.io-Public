@@ -6,18 +6,22 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // match-equations
 const math = require('remark-math');
 const katex = require('rehype-katex');
+// git settings
+const gitRepoOrg = 'karma-git'
+const gitRepoName = 'Andrew-Horbach.github.io-Public'
+const gitFullPath = `https://github.com/${gitRepoOrg}/${gitRepoName}/blob/master`;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Andrew Horbach',
   tagline: "Currently I'm learning",
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/Andrew-Horbach.github.io-Public/',
+  baseUrl: `/${gitRepoName}/`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'karma-git', // Usually your GitHub org/user name.
-  projectName: 'Andrew-Horbach.github.io-Public ', // Usually your repo name.
+  organizationName: gitRepoOrg, // Usually your GitHub org/user name.
+  projectName: gitRepoName, // Usually your repo name.
 
   // ref: https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -29,17 +33,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/karma-git/Andrew-Horbach.github.io-Public/blob/master/packages/create-docusaurus/templates/shared/',
+          editUrl: `${gitFullPath}/docs`,
           // match-equations
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/karma-git/Andrew-Horbach.github.io-Public/blob/master/packages/create-docusaurus/templates/shared/',
+          editUrl: `${gitFullPath}/blog`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
