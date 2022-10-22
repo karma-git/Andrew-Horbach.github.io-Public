@@ -1,7 +1,7 @@
 FROM alpine:3.14
 
 RUN apk add \
-  nodejs~=14.19 \ 
+  nodejs~=14.19 \
   yarn~=1.22 \
   && yarn install
 

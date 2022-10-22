@@ -14,7 +14,7 @@ const gitRepoPath = `https://github.com/${gitOrg}/${gitRepoName}`;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Andrew Horbach',
-  tagline: "Currently I'm learning",
+  tagline: "An inspired DevOps|Platform|SRE Engineer",
   url: `https://${gitOrg}.github.io/${gitRepoName}/`,
   baseUrl: `/${gitRepoName}/`,
   onBrokenLinks: 'throw',
