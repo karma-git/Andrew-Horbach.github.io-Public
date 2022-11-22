@@ -4,9 +4,25 @@
         <title>Andrew Horbach Blog</title>
         <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog</link>
         <description>Andrew Horbach Blog</description>
-        <lastBuildDate>Tue, 08 Mar 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Lens - build from source]]></title>
+            <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/lens-build</link>
+            <guid>lens-build</guid>
+            <pubDate>Sun, 20 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Notion Fast Start]]></description>
+            <content:encoded><![CDATA[<h2>История</h2><p>Не запускался Lens 6, быстро проблему решить не получилось, поэтому решил откатиться на предыдущие версии.  </p><pre><code class="language-shell">DEBUG=true /Applications/Lens.app/Contents/MacOS/Lens
+</code></pre><p>Логи дебага выдавали ошибки, по которым в issues в репозитории на GitHub <a href="https://github.com/lensapp/lens">https://github.com/lensapp/lens</a> не удалось найти полезной информации.<br/>
+<!-- -->Как выяснилось - легкого доступа к предыдущим релизам нет, единственный из вариантов это собраться из сорцов.</p><h2>Сборка</h2><pre><code class="language-shell">$ git clone https://github.com/lensapp/lens.git
+$ git checkout v5.5.4 # последний из стабильных релизов 5.x.x
+$ make build
+</code></pre><p>Тут и начинаются грабли, в большей степени связанные с nodejs и несовместимостью версий самой ноды или пакетов.</p><p>Мне для корректировки версии помогла утилита <code>nvm</code> и эта <a href="https://tecadmin.net/install-nvm-macos-with-homebrew/">статья</a></p><pre><code class="language-shell">nvm ls-remote  # смотрим какие варианты нам может предложить менеджер ноды
+nvm install lts/fermium # node 15.x
+nvm use lts/fermium  # пиним версию ноды в системе
+</code></pre><p>В моем случае пина версии ноды хватило, чтобы успешно собрать <code>.dmg</code> пакет.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Notion]]></title>
             <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/notion-crush-course</link>

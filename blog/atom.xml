@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog</id>
     <title>Andrew Horbach Blog</title>
-    <updated>2022-03-08T00:00:00.000Z</updated>
+    <updated>2022-11-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog"/>
     <subtitle>Andrew Horbach Blog</subtitle>
     <icon>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Lens - build from source]]></title>
+        <id>lens-build</id>
+        <link href="https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/lens-build"/>
+        <updated>2022-11-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Notion Fast Start]]></summary>
+        <content type="html"><![CDATA[<h2>История</h2><p>Не запускался Lens 6, быстро проблему решить не получилось, поэтому решил откатиться на предыдущие версии.  </p><pre><code class="language-shell">DEBUG=true /Applications/Lens.app/Contents/MacOS/Lens
+</code></pre><p>Логи дебага выдавали ошибки, по которым в issues в репозитории на GitHub <a href="https://github.com/lensapp/lens">https://github.com/lensapp/lens</a> не удалось найти полезной информации.<br/>
+<!-- -->Как выяснилось - легкого доступа к предыдущим релизам нет, единственный из вариантов это собраться из сорцов.</p><h2>Сборка</h2><pre><code class="language-shell">$ git clone https://github.com/lensapp/lens.git
+$ git checkout v5.5.4 # последний из стабильных релизов 5.x.x
+$ make build
+</code></pre><p>Тут и начинаются грабли, в большей степени связанные с nodejs и несовместимостью версий самой ноды или пакетов.</p><p>Мне для корректировки версии помогла утилита <code>nvm</code> и эта <a href="https://tecadmin.net/install-nvm-macos-with-homebrew/">статья</a></p><pre><code class="language-shell">nvm ls-remote  # смотрим какие варианты нам может предложить менеджер ноды
+nvm install lts/fermium # node 15.x
+nvm use lts/fermium  # пиним версию ноды в системе
+</code></pre><p>В моем случае пина версии ноды хватило, чтобы успешно собрать <code>.dmg</code> пакет.</p>]]></content>
+        <author>
+            <name>Andrew Horbach</name>
+            <uri>https://github.com/karma-git</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Notion]]></title>
         <id>notion-crush-course</id>
