@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic=self.webpackChunkclassic||[]).push([[632],{5059:function(a){a.exports=JSON.parse('{"allTagsPath":"/Andrew-Horbach.github.io-Public/blog/tags","slug":"/Andrew-Horbach.github.io-Public/blog/tags/aws","name":"aws","count":1,"permalink":"/Andrew-Horbach.github.io-Public/blog/tags/aws"}')}}]);
