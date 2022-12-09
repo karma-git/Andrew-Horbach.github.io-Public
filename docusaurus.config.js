@@ -84,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'DevOps',
-                to: '/docs/demo',
+                to: '/docs/1-hi',
               },
             ],
           },
