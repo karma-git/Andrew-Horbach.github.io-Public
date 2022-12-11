@@ -1,0 +1,46 @@
+## std
+
+# # sources - точка входа, откуда vector-у брать логи
+# [sources.stdin]
+# type = "stdin"
+
+# # transforms - как vector-у обработать логи?
+# [transforms.remap_syslog]
+# inputs = [ "stdin"]
+# type = "remap"
+# source = '''
+#   structured = parse_syslog!(.message)
+#   del(.file)
+#   del(.host)
+#   . = merge(., structured)
+# '''
+
+# # sinks - в какую систему хранения сложить обработанный лог
+# [sinks.stdout]
+# inputs = ["remap_syslog"]
+# type = "console"
+# encoding.codec = "json"
+
+## FILE
+
+# sources - точка входа, откуда vector-у брать логи
+[sources.file]
+type = "file"
+include = ["/etc/vector/logs"]
+
+# transforms - как vector-у обработать логи?
+[transforms.remap_syslog]
+inputs = [ "file"]
+type = "remap"
+source = '''
+  structured = parse_syslog!(.message)
+  del(.file)
+  del(.host)
+  . = merge(., structured)
+'''
+
+# sinks - в какую систему хранения сложить обработанный лог
+[sinks.stdout]
+inputs = ["remap_syslog"]
+type = "console"
+encoding.codec = "json"
