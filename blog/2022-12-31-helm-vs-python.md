@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 # Описание
 
-Решали с коллегами задачу по генерации манифестов **Provisioner** в цикле, при таком создании есть один деструктивный момент - нужно выбрать Container Runtime Interface (CRI), иначе  `provisioner.spec.kubeletConfiguration.containerRuntime` в манифесте **Provisioner**, то в паре с **AWSNodeTemplate** karpenter по дефолту будет выставлен в `containerd` ([подтверждение в тесте](https://github.com/aws/karpenter/blob/7241f43569d6878056f3251667b4689684071401/pkg/cloudprovider/launchtemplate_test.go#L894))
+Решали с коллегами задачу по генерации манифестов **Provisioner** в цикле, при таком создании есть один деструктивный момент - нужно выбрать Container Runtime Interface (CRI), иначе  `provisioner.spec.kubeletConfiguration.containerRuntime` в манифесте **Provisioner** в паре с **AWSNodeTemplate** karpenter по дефолту выставят нам `containerd` ([подтверждение в тесте](https://github.com/aws/karpenter/blob/7241f43569d6878056f3251667b4689684071401/pkg/cloudprovider/launchtemplate_test.go#L894))
 
 Собрали ряд требований:
 - CRI не указан в провиженере, значит выбираем дефолтный для нас (в нашем случае dockerd)
