@@ -4,9 +4,126 @@
         <title>Andrew Horbach Blog</title>
         <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog</link>
         <description>Andrew Horbach Blog</description>
-        <lastBuildDate>Mon, 05 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Helm vs Python validation]]></title>
+            <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/helm-vs-python</link>
+            <guid>helm-vs-python</guid>
+            <pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Я ненавижу helm]]></description>
+            <content:encoded><![CDATA[<p>Решали с коллегами задачу по генерации манифестов <strong>Provisioner</strong> в цикле, при таком создании есть один деструктивный момент - нужно выбрать Container Runtime Interface (CRI), иначе  <code>provisioner.spec.kubeletConfiguration.containerRuntime</code> в манифесте <strong>Provisioner</strong>, то в паре с <strong>AWSNodeTemplate</strong> karpenter по дефолту будет выставлен в <code>containerd</code> (<a href="https://github.com/aws/karpenter/blob/7241f43569d6878056f3251667b4689684071401/pkg/cloudprovider/launchtemplate_test.go#L894">подтверждение в тесте</a>)</p><p>Собрали ряд требований:</p><ul><li>CRI не указан в провиженере, значит выбираем дефолтный для нас (в нашем случае dockerd)</li><li>CRI указан в провиженере, выбираем его</li><li>CRI не указан в провиженере, но в <code>provisioner.spec.kubeletConfiguration</code> есть другие параметры</li></ul><p>Получился следующий код валидации:</p><h2>helm</h2><pre><code class="language-yaml">  # Kubelet
+  # If Provisioner.kubeletConfiguration is not empty
+  {{- if .kubeletConfiguration }}
+  kubeletConfiguration:
+    # If containerRuntime has been configured in Provisioner.kubeletConfiguration
+    {{- if hasKey .kubeletConfiguration &quot;containerRuntime&quot; -}}
+      {{- toYaml .kubeletConfiguration | nindent 4 }}
+    # ElseIf containerRuntime has not been configured in Provisioner.kubeletConfiguration
+    {{- else }}
+      # Pick default CRI from karpenter.default.kubeletConfiguration and add it to current .kubeletConfiguration
+      {{- $CRI := dict &quot;containerRuntime&quot; $.Values.karpenter.default.kubeletConfiguration.containerRuntime -}}
+      {{- $kubeletConfiguration := merge $CRI .kubeletConfiguration }}
+      {{- toYaml $kubeletConfiguration | nindent 4 }}
+    {{- end }}
+  # ElseIf Provisioner.kubeletConfiguration is empty
+  {{- else }}
+  kubeletConfiguration:
+      {{- toYaml $.Values.karpenter.default.kubeletConfiguration | nindent 4 }}
+  {{- end }}
+</code></pre><details><summary>Тесты</summary><p>Test cases:</p><ul><li>1) CRI не указан в провиженере
+values.yml</li></ul><pre><code class="language-yaml">karpenter:
+  payload:
+    ahorbach:
+      foo: bar
+</code></pre><p>result:</p><pre><code class="language-yaml">spec:
+  # Kubelet
+  # If Provisioner.kubeletConfiguration is not empty
+  kubeletConfiguration:
+    containerRuntime: dockerd
+</code></pre><ul><li>2) CRI указан в провиженере</li></ul><p>values.yml</p><pre><code class="language-yaml">karpenter:
+  payload:
+    ahorbach:
+      kubeletConfiguration:
+        bar: baz
+        containerRuntime: rocket
+</code></pre><p>result:</p><pre><code class="language-yaml">spec:
+  # Kubelet
+  # If Provisioner.kubeletConfiguration is not empty
+  kubeletConfiguration:
+    # If containerRuntime has been configured in Provisioner.kubeletConfiguration
+    bar: baz
+    containerRuntime: rocket
+    # ElseIf containerRuntime has not been configured in Provisioner.kubeletConfiguration
+  # ElseIf Provisioner.kubeletConfiguration is empty
+</code></pre><ul><li>3) CRI не указан в провиженере, но есть конфиг</li></ul><p>values.yml</p><pre><code class="language-yaml">  payload:
+    ahorbach:
+      kubeletConfiguration:
+        spam: eggs
+</code></pre><p>result:</p><pre><code class="language-yaml">spec:
+  # Kubelet
+  # If Provisioner.kubeletConfiguration is not empty
+  kubeletConfiguration:
+    # If containerRuntime has been configured in Provisioner.kubeletConfiguration
+      # Pick default CRI from karpenter.default.kubeletConfiguration and add it to current .kubeletConfiguration
+    containerRuntime: dockerd
+    spam: eggs
+</code></pre></details><h2>python</h2><pre><code class="language-python">from pydantic import BaseModel, validator
+
+DEFAULT_CRI = {&quot;containerRuntime&quot;: &quot;dockerd&quot;}
+
+class karpenterPayloadProvisioner(BaseModel):
+  name: str
+  kubelet_configuration: dict = DEFAULT_CRI
+
+  @validator(&#x27;kubelet_configuration&#x27;)
+  def kubelet_container_runtime(cls, v):
+    cri = v.get(&quot;containerRuntime&quot;)
+    # option two - Mutating
+    if cri not in [&quot;dockerd&quot;, &quot;containerd&quot;]:
+      v.update(DEFAULT_CRI)
+    return v
+</code></pre><details><summary>Тесты</summary><pre><code class="language-python">import typing as t
+
+import pytest
+
+from karpenter import karpenterPayloadProvisioner
+
+# without selected CRI in Provisioner
+case1 = (&quot;foo&quot;, {}, &quot;dockerd&quot;)
+
+# with containerd as a CRI for Provisioner
+
+case2 = (&quot;bar&quot;, {&quot;kubeReserved&quot;: &quot;testMe&quot;, &quot;containerRuntime&quot;: &quot;containerd&quot;}, &quot;containerd&quot;)
+
+# with typo in CRI for Provisioner
+case3 = (&quot;baz&quot;, {&quot;kubeReserved&quot;: &quot;testMe&quot;, &quot;containerRuntime&quot;: &quot;qwerty&quot;}, &quot;dockerd&quot;)
+
+test_cases = [
+    case1,
+    case2,
+    case3,
+]
+
+@pytest.mark.parametrize(&quot;name, kubelet_configuration, expected_CRI&quot;, test_cases)
+def test_cri_provisioner(name: str, kubelet_configuration: t.Optional[dict], expected_CRI: str):
+
+    provisioner = karpenterPayloadProvisioner(name=name, kubelet_configuration=kubelet_configuration)
+    assert provisioner.kubelet_configuration[&quot;containerRuntime&quot;] == expected_CRI
+
+</code></pre><pre><code class="language-shell">pytest .
+=========================================================== test session starts ============================================================
+platform darwin -- Python 3.10.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+rootdir: /Users/a.horbach/repository-self/python-monorepo/pydantic-karpenter
+plugins: django-4.4.0, cov-3.0.0
+collected 3 items
+
+test_karpenter.py ...                                                                                                                [100%]
+
+============================================================ 3 passed in 0.08s =============================================================
+</code></pre></details><h2>Links</h2><ul><li><a href="https://github.com/karma-git/Python-Playground/tree/master/pydantic-karpenter">python code</a></li><li><a href="https://github.com/pydantic/pydantic">pydantic</a></li><li><a href="https://github.com/pytest-dev/pytest">pytest</a></li><li><a href="https://github.com/aws/karpenter">karpenter</a></li><li><a href="https://www.youtube.com/watch?v=dOO3GmX6ukU">pydantic digitalize video</a></li></ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Terraformer - reverse Terraform]]></title>
             <link>https://karma-git.github.io/Andrew-Horbach.github.io-Public/Andrew-Horbach.github.io-Public/blog/terraformer</link>
